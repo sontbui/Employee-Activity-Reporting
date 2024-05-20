@@ -1,0 +1,20 @@
+<odoo>
+    <record id="view_employee_activity_pivot" model="ir.ui.view">
+        <field name="name">employee.activity.pivot</field>
+        <field name="model">employee.activity</field>
+        <field name="arch" type="xml">
+            <pivot string="Employee Activity">
+                <field name="employee_id" type="row"/>
+                <field name="sale_order_count" type="measure"/>
+                <field name="purchase_order_count" type="measure"/>
+                <field name="crm_count" type="measure"/>
+                <field name="meeting_count" type="measure"/>
+                <field name="expense_count" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+     <menuitem name="Employee Activity Report"
+              id="attendance_report_menu"
+              parent="hr.hr_menu_hr_reports"
+              action="action_employee_attendence_report_wizard"/>
+</odoo>

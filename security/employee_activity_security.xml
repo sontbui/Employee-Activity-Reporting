@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <!-- Định nghĩa nhóm người dùng -->
+        <record id="group_employee_activity_user" model="res.groups">
+            <field name="name">Employee Activity User</field>
+            <field name="category_id" ref="base.module_category_hr"/>
+        </record>
+
+        <!-- Quy tắc bảo mật cho mô hình employee.activity -->
+        <record model="ir.rule" id="employee_activity_rule_user">
+            <field name="name">Employee Activity User Rule</field>
+            <field name="model_id" ref="model_employee_activity"/>
+            <field name="groups" eval="[(4, ref('employee_activity_report.group_employee_activity_user'))]"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+    </data>
+</odoo>
