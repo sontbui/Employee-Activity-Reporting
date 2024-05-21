@@ -1,0 +1,32 @@
+<odoo>
+    <!-- Define the view -->
+    <record id="view_employee_activity_pivot" model="ir.ui.view">
+        <field name="name">employee.activity.pivot</field>
+        <field name="model">employee.activity</field>
+        <field name="arch" type="xml">
+            <pivot string="Employee Activity">
+                <field name="employee_id" type="row"/>
+                <field name="sale_order_count" type="measure"/>
+                <field name="purchase_order_count" type="measure"/>
+                <field name="crm_count" type="measure"/>
+                <field name="meeting_count" type="measure"/>
+                <field name="expense_count" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Define the action -->
+    <record id="action_employee_attendence_report_wizard" model="ir.actions.act_window">
+        <field name="name">Employee Attendance Report</field>
+        <field name="res_model">employee.activity</field>
+        <field name="view_mode">pivot</field>
+        <field name="view_id" ref="employee_dashboard.view_employee_activity_pivot"/>
+        <field name="target">current</field>
+    </record>
+
+    <!-- Define the menuitem -->
+    <menuitem name="Employee Activity Report"
+              id="attendance_report_menu"
+              parent="hr.hr_menu_hr_reports"
+              action="employee_dashboard.action_employee_attendence_report_wizard"/>
+</odoo>
