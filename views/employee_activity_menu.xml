@@ -1,5 +1,4 @@
 <odoo>
-    <!-- Định nghĩa view trước -->
     <record id="view_employee_activity_pivot" model="ir.ui.view">
         <field name="name">employee.activity.pivot</field>
         <field name="model">employee.activity</field>
@@ -14,8 +13,6 @@
             </pivot>
         </field>
     </record>
-
-    <!-- Định nghĩa action sau khi view -->
     <record id="action_employee_activity_pivot" model="ir.actions.act_window">
         <field name="name">Employee Activity</field>
         <field name="res_model">employee.activity</field>
@@ -23,7 +20,6 @@
         <field name="view_id" ref="view_employee_activity_pivot"/>
     </record>
 
-    <!-- Định nghĩa menuitem -->
     <menuitem id="menu_employee_report_root"
               name="Reporting"
               parent="hr.menu_hr_root"
