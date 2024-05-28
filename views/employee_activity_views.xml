@@ -1,5 +1,5 @@
 <odoo>
-    <!-- Define the view -->
+
     <record id="view_employee_activity_pivot" model="ir.ui.view">
         <field name="name">employee.activity.pivot</field>
         <field name="model">employee.activity</field>
@@ -15,7 +15,7 @@
         </field>
     </record>
 
-    <!-- Define the action -->
+
     <record id="action_employee_attendence_report_wizard" model="ir.actions.act_window">
         <field name="name">Employee Attendance Report</field>
         <field name="res_model">employee.activity</field>
@@ -24,7 +24,7 @@
         <field name="target">current</field>
     </record>
 
-    <!-- Define the menuitem -->
+
     <menuitem name="Employee Activity Report"
               id="attendance_report_menu"
               parent="hr.hr_menu_hr_reports"
